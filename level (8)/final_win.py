@@ -23,5 +23,6 @@ class EndWin:
         self.win.setLayout(self.layout)
 
     def show(self, result):
-        self.text.setText('Confratulations, results:', result)
+        result = 'congrats: ' + result
+        self.text.setText(result)
         self.win.show()

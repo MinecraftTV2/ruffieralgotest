@@ -1,6 +1,6 @@
 
 
-txt_hello = 'Hello, enjoy the test'
+txt_hello = 'Hello, enjoy the test. 15+ only!'
 txt_next = 'Start test'
 txt_instruction = '' 
 txt_title = ''

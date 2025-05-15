@@ -22,6 +22,8 @@ class App:
         self.first_win.move(200, 100)
         self.first_win.show()
 
+        self.result = ''
+
         layout = QVBoxLayout(self.first_win)
         text = QLabel(instr.txt_hello)
         layout.addWidget(text, alignment=Qt.AlignCenter)
@@ -40,8 +42,25 @@ class App:
 
     def control_results(self, name, age, test1, test2, test3):
         if age != '0' and test1 != '0' and test2 != '0' and test3 != '0':
-            print('veru good')
-            self.third_win.show()
+           #kalkulacie
+            ri = ((4*(int(test1) + int(test2) + int(test3)))-200)/10
+
+            if int(age) >= 15:
+                if ri >= 15: self.result = 'hrozna srdcova funkcia'
+                elif ri >= 11: self.result = 'ne gut srdcova funkcia'
+                elif ri >= 6: self.result = 'gut srdcova funkcia'
+                elif ri >= 0.5: self.result = 'velmi gut srdcova funkcia'
+                elif ri == 0: self.result = 'super srdcova funkcia'
+                else: 'bad input woodhead'
+                self.third_win.show(self.result)
+
+            else:
+                print('too zoung')  
+                self.first_win.show()          
+        else:
+            print('not good')
+            self.second_win.show()
+            self.third_win.hide()
             
         
 
